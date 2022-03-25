@@ -33,7 +33,9 @@
     "prereport:combined": "npm run combine:reports",
     "report:combined": "nyc report --reporter lcov --reporter text --report-dir coverage",
     "postreport:combined": "nyc check-coverage",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "author": {
     "name": "Liran Tal",
@@ -64,7 +66,8 @@
     "cwe-sdk": "^1.0.4",
     "debug": "^4.2.0",
     "nyc": "^15.1.0",
-    "yargs": "^15.4.1"
+    "yargs": "^15.4.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.2.1",
@@ -240,5 +243,6 @@
       }
     ],
     "@semantic-release/github"
-  ]
+  ],
+  "snyk": true
 }
